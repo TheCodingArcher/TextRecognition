@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView imageCapture;
     TextView textDisplay;
-    Button btnImageCapture, btnDetectImageText;
+    Button btnImageCapture, btnDetectImageText, btnTestCrash;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private Bitmap imageBitmap;
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         textDisplay = findViewById(R.id.textDisplay);
         btnImageCapture = findViewById(R.id.btnImageCapture);
         btnDetectImageText = findViewById(R.id.btnDetectImageText);
+        btnTestCrash = findViewById(R.id.btnTestCrash);
 
         btnImageCapture.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 detectTextFromImage();
+            }
+        });
+
+        btnTestCrash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                throw new RuntimeException("Test Crash"); // Force a crash
             }
         });
     }

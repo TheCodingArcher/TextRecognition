@@ -3,4 +3,5 @@
     <string name="displayText">Display Text From Image</string>
     <string name="capture_image">Capture Image</string>
     <string name="detect_text">Detect Text</string>
+    <string name="test_crash">Test A Crash</string>
 </resources>
